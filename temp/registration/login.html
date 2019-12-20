@@ -1,0 +1,14 @@
+{% extends 'home.html' %}
+
+{% block content %}
+
+<h3> this is login </h3>
+
+<form method="POST">
+  {% csrf_token %}
+  {{ form.as_p}}
+
+  <button type="submit" > Login </button>
+</form>
+
+{% endblock content %}
