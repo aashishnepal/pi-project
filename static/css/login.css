@@ -4,7 +4,7 @@ body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
 }
-
+/* 
 .topnav {
   overflow: hidden;
   background-color: #008080;
@@ -86,7 +86,7 @@ body {
   #rcorners1.login input[type=text] {
     border: 1px solid #008080; 
   }
-}
+} */
 
 /*the container must be positioned relative:*/
 .custom-select {

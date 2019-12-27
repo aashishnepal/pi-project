@@ -11,6 +11,10 @@ from django.contrib.auth.forms import UserCreationForm
 
 # Create your views here.
 
+class LoginPageView(TemplateView):
+    # model = accounts
+    template_name ='registration/login.html'
+
 def login(request):
     if request.method== 'POST':
         username = request.POST['username']
@@ -23,9 +27,9 @@ def login(request):
             return render(request,'home.html')
         else:
             messages.info(request,'invalid credentials') 
-            return render(request,'login')  
+            return render(request,'LoginPageView')  
     else:
-        return render(request,'login.html')
+        return render(request,'LoginPageView')
 
 
 class HomePageView(TemplateView):
