@@ -1,14 +1,62 @@
-{% extends 'home.html' %}
+{% extends 'nav.html' %}
 
 {% block content %}
 
-<h3> this is login </h3>
 
-<form method="POST">
-  {% csrf_token %}
-  {{ form.as_p}}
 
-  <button type="submit" > Login </button>
-</form>
+  
+  
+{% load static %}
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- <link rel="stylesheet" href="login.css"> -->
+  <link rel="stylesheet" href="{% static 'css/login.css' %}"> 
+  
+  
+</head>
+<body>
+	<body>
+
+
+<div #rcorners1 id="rcorners1">
+  <p>LOGIN</p>
+ <div class="login-container">
+    <form action= "login" method="POST">
+      {% csrf_token %}
+      
+      Username <input type="text"  name="username">
+      Password <input type="password"  name="password">
+      
+
+      Login Here<input type="Submit">
+    </form>
+   
+  </div>
+  <div>
+      
+    {% for message in messages %}
+    <h3> {{message}} </h3>   
+    {% endfor %}
+
+  </div>
+    
+ 
+   <p><b><a href="accounts/signup" target="_parent"> Sign Up As New User</a></b></p>
+   <p><b><a href="default.asp" target="_self"> Forget Password?</a></b></p>
+</div>
+
+
+
+
+</body>
+</html>
+
+
 
 {% endblock content %}
